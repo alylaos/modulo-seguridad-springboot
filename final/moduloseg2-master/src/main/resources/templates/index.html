@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<div class="container p-4">
+    <h1 th:if="${resp.getCode() == '200'}" th:text="'Bienvenido '+${resp.getData().getName()}"></h1>
+    <h1 th:if="${resp.getCode() != '200'}" th:text="${resp.getMessage()}"></h1>
+<div class="pt-5">
+    <a th:href="@{/login}">Volver</a>
+</div>
+</div>
+</body>
+</html>
